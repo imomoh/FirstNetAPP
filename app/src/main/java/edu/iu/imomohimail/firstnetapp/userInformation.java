@@ -1,14 +1,12 @@
 package edu.iu.imomohimail.firstnetapp;
 
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "users")
-
-
-
-public class AppDataBase {
+public class userInformation {
 
     @PrimaryKey
     private int user_phone_number;
