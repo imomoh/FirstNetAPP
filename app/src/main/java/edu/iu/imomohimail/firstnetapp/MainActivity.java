@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(b){
                         mainvIEW.setBackgroundColor(getResources().getColor(R.color.red));
+
                 }else {
                     mainvIEW.setBackgroundColor(getResources().getColor(R.color.blue));
                 }
