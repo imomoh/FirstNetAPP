@@ -3,6 +3,7 @@ package edu.iu.imomohimail.firstnetapp;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,23 +41,36 @@ public class UserDataInput extends AppCompatActivity {
                 EditText emergencyContactInfo = findViewById(R.id.emergencyContactInput);
 
                 user = new userInformation();
+                myDao = new UserInformationDao() {
+                    @Override
+                    public void addUser(userInformation user) {
+
+                    }
+                };
+
 
                 user.setUser_driver_license_number(String.valueOf(driverLicenseNumInfo.getText()));
-                user.setAge(String.valueOf(ageInfo));
-                user.setAllergies(allergiesInfo.toString());
-                user.setMedications(String.valueOf(medicationsInfo));
-                user.setMedidcal_conditions(String.valueOf(medicalConditionsInfo));
-                user.setEmergency_contact_phone_number(String.valueOf(emergencyContactInfo));
+                user.setAge(String.valueOf(ageInfo.getText()));
+                user.setAllergies(String.valueOf(allergiesInfo.getText()));
+                user.setMedications(String.valueOf(medicationsInfo.getText()));
+                user.setMedidcal_conditions(String.valueOf(medicalConditionsInfo.getText()));
+                user.setEmergency_contact_phone_number(String.valueOf(emergencyContactInfo.getText()));
+
+                if (myDao != null){
+                    myDao.addUser(user);
+                }
 
 
-                myDao.addUser(user);
 
-
-                CharSequence text = "Info Stored!";
+                CharSequence text = user.getUser_driver_license_number();
+                CharSequence licenseNumToast = user.getUser_driver_license_number().toString();
                 int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                Toast toast = Toast.makeText(getApplicationContext(), user.getAllergies(), duration);
                 toast.show();
+
+//                Toast toast1 = Toast.makeText(getApplicationContext(), user.getAge(), duration);
+//                toast.show();
 
                 driverLicenseNumInfo.setText("");
                 ageInfo.setText("");
@@ -65,8 +79,17 @@ public class UserDataInput extends AppCompatActivity {
                 medicalConditionsInfo.setText("");
                 emergencyContactInfo.setText("");
 
+                String informationList = user.getUser_driver_license_number().toString() + user.getAge().toString();
 
-                startActivity(new Intent(UserDataInput.this, consentForm.class));
+//                Log.d("Working", "Log is working");
+//                Log.d("Driver License", user.getUser_driver_license_number());
+//                Log.d("Working", user.getAge().toString());
+//                Log.d("Allergies", user.getAllergies());
+//                Log.d("Medications", user.getMedications());
+//                Log.d("Medical Conditions", user.getMedidcal_conditions());
+//                Log.d("Preferred Hospital", user.getPreferred_hospital());
+//                Log.d("Emergency Contact", user.getEmergency_contact_phone_number());
+                //startActivity(new Intent(UserDataInput.this, consentForm.class));
             }
         });
     }
