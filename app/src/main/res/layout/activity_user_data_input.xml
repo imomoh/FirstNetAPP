@@ -20,64 +20,78 @@
             android:id="@+id/ageInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Age"
             android:inputType="number"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/allergiesInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Allergies"
             android:inputType="textPersonName"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/medicationInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Medications"
             android:inputType="textPersonName"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/surgicalInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Surgical History"
             android:inputType="textPersonName"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/conditionsInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Medical Conditions"
             android:inputType="textPersonName"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/hospitalInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Preferred Hospital"
             android:inputType="textPersonName"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
         <EditText
             android:id="@+id/emergencyContactInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="12"
             android:hint="Emergency Contact Phone"
             android:inputType="phone"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:paddingTop="20dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 
