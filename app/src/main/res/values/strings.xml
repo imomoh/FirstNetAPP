@@ -4,8 +4,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
-    
+
+
     <string name="consentFormText"></string>
 
 
@@ -14,4 +14,7 @@
 I understand that my personal health information is protected by federal regulations under the Health Information Portability and Accountability Act (HIPAA) and may not be disclosed without either my authorization or consent. I also Understand that I am not required to sign this authorization/consent by law and understand that the InfoGate platform is used to help first responders critical, life saving information to make time sensitive, accurate and effective decisions under certain circumstances.
     </string>
 
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

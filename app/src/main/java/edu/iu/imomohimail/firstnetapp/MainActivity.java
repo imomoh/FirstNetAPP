@@ -1,15 +1,20 @@
 package edu.iu.imomohimail.firstnetapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.design.button.MaterialButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
     public static boolean isUser= false;
@@ -19,14 +24,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // initiate a Switch
+
+        if (ParseUser.getCurrentUser()!=null){
+            Boolean type = (Boolean) ParseUser.getCurrentUser().get("type");
+            if (type){
+                Intent intent = new Intent(getApplicationContext(), UserDataInput.class);
+                startActivity(intent);
+            }else {
+                Intent intent2 = new Intent(getApplicationContext(), FirstResponderInput.class);
+                startActivity(intent2);
+            }
+        }
+
         mainvIEW = (ConstraintLayout) findViewById(R.id.screen1back);
-        CardView cardView = findViewById(R.id.findoption);
+        Button cardView = findViewById(R.id.findoption);
         Switch simpleSwitch = (Switch) findViewById(R.id.usersettings);
         mainvIEW.setBackgroundColor(getResources().getColor(R.color.blue));
         final TextView UserType = (TextView) findViewById(R.id.usertypetextview);
         UserType.setText("Citizen");
-// check current state of a Switch (true or false).
         Boolean switchState = simpleSwitch.isChecked();
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -43,14 +58,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            cardView.setOnContextClickListener(new View.OnContextClickListener() {
-                @Override
-                public boolean onContextClick(View view) {
 
-                    return false;
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (isUser){
+                        Intent intent = new Intent(getApplicationContext(), UserDataInput.class);
+                        startActivity(intent);
+                    }else {
+                        Intent intent2 = new Intent(getApplicationContext(), FirstResponderInput.class);
+                        startActivity(intent2);
+                    }
+
                 }
             });
-        }
+
+
+
     }
 }
