@@ -15,7 +15,7 @@ public class consentForm extends Fragment {
     public consentForm() {
         // Required empty public constructor
     }
-    
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
