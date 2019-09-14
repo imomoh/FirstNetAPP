@@ -2,21 +2,25 @@ package edu.iu.imomohimail.firstnetapp;
 
 
 import android.graphics.Color;
-import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.parse.ParseGeoPoint;
+import com.parse.FunctionCallback;
+import com.parse.ParseCloud;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bolts.Continuation;
 import bolts.Task;
@@ -61,6 +65,8 @@ String getUsersID;
                 searchforPatient(ID);
             }
         });
+
+        callcloudcode();
        return view;
     }
 
@@ -73,6 +79,7 @@ String getUsersID;
 
        // query.setLimit(displaylimit);
        // query.setSkip(currentPage * displaylimit);
+
         query.fromNetwork();
         query.findInBackground().continueWithTask(new Continuation<List<ParseObject>, Task<List<ParseObject>>>() {
             @Override
@@ -96,6 +103,27 @@ String getUsersID;
             }
         });
 
+    }
+
+    private void callcloudcode(){
+
+        // Use this map to send parameters to your Cloud Code function
+// Just push the parameters you want into it
+        Map<String, String> parameters = new HashMap<String, String>();
+parameters.put("s","answer");
+// This calls the function in the Cloud Code
+        ParseCloud.callFunctionInBackground("test", parameters, new FunctionCallback<Map<String, Object>>() {
+            @Override
+            public void done(Map<String, Object> mapObject, ParseException e) {
+                if (e == null) {
+                    // Everything is alright
+                    Toast.makeText(getContext(), "Answer = " + mapObject.get("answer").toString(), Toast.LENGTH_LONG).show();
+                }
+                else {
+                    // Something went wrong
+                }
+            }
+        });
     }
 
 }

@@ -2,7 +2,7 @@
     <string name="app_name">FirstNetAPP</string>
     <string name="title_activity_user_data_input">UserDataInput</string>
 
-
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
 
 
     <string name="consentFormText"></string>
@@ -12,6 +12,10 @@
         I (Input Name) do hereby willingly grant consent to submit information pertaining to my health and information that can help with health related issues via the InfoGate platform for use from first responders (paramedics, emergency medical technicians, police officers, firefighters, rescuers, and other trained members of organizations connected with this type of work).
 I understand that my personal health information is protected by federal regulations under the Health Information Portability and Accountability Act (HIPAA) and may not be disclosed without either my authorization or consent. I also Understand that I am not required to sign this authorization/consent by law and understand that the InfoGate platform is used to help first responders critical, life saving information to make time sensitive, accurate and effective decisions under certain circumstances.
     </string>
+
+    <string name="back4app_app_id">9ihSKAzkxT3by7Q8KCdITyQFpL1LxGK3haGKGejE</string>
+    <string name="back4app_client_key">rMzfsfWIb5V2lUitNdRg7lAzpv9v5u5veBrgRkiJ</string>
+    <string name="gcm_sender_id">1056181869133</string>
 
 
 </resources>

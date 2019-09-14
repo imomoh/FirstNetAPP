@@ -1,13 +1,10 @@
 package edu.iu.imomohimail.firstnetapp;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.button.MaterialButton;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -20,10 +17,12 @@ import com.parse.ParseUser;
 public class MainActivity extends AppCompatActivity {
     public static boolean isUser= true;
     ConstraintLayout  mainvIEW;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         if (ParseUser.getCurrentUser()!=null){
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView UserType = (TextView) findViewById(R.id.usertypetextview);
         UserType.setText("Citizen");
         // Save the current Installation to Back4App
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+
         Boolean switchState = simpleSwitch.isChecked();
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
