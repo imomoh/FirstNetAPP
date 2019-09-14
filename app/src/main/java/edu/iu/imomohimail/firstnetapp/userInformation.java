@@ -9,10 +9,10 @@ import androidx.room.PrimaryKey;
 public class userInformation {
 
     @PrimaryKey
-    private int user_driver_license_number;
+    private String user_driver_license_number;
 
-    @ColumnInfo(name = "user_name")
-    private String name;
+    @ColumnInfo(name = "user_age")
+    private String age;
 
     @ColumnInfo(name = "user_allergies")
     private String allergies;
@@ -33,20 +33,20 @@ public class userInformation {
     private String emergency_contact_phone_number;
 
 
-    public int getUser_driver_license_number() {
+    public String getUser_driver_license_number() {
         return user_driver_license_number;
     }
 
-    public void setUser_driver_license_number(int user_driver_license_number) {
+    public void setUser_driver_license_number(String user_driver_license_number) {
         this.user_driver_license_number = user_driver_license_number;
     }
 
-    public String getName() {
-        return name;
+    public String getAge() {
+        return age;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getAllergies() {
