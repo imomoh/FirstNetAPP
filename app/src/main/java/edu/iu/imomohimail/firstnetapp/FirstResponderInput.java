@@ -2,6 +2,7 @@ package edu.iu.imomohimail.firstnetapp;
 
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,24 @@ public class FirstResponderInput extends AppCompatActivity {
             String carrierName = manager.getNetworkOperatorName();
             service.setText(carrierName);
         }
+        if (ParseUser.getCurrentUser()!=null){
+            Boolean type = (Boolean) ParseUser.getCurrentUser().get("type");
+            if (type!=null) {
+                if (type) {
+
+                } else {
+                    Fragment fragment = new FirstResponderProfile();
+                    // FragmentManager fm = getFragmentManager();
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.container, fragment);
+                    transaction.commit();
+                    button.setVisibility(View.INVISIBLE);
+                    badgenumber.setVisibility(View.INVISIBLE);
+
+                }
+            }
+        }
+
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -46,19 +65,23 @@ public class FirstResponderInput extends AppCompatActivity {
                         if (e != null) {
                             Log.d("MyApp", "Anonymous login failed.");
                         } else {
+                            Fragment fragment = new FirstResponderProfile();
+
+                            // FragmentManager fm = getFragmentManager();
+                            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                            transaction.replace(R.id.container, fragment);
+                            transaction.commit();
+                            button.setVisibility(View.INVISIBLE);
+                            badgenumber.setVisibility(View.INVISIBLE);
+
+                            ParseUser.getCurrentUser().put("type",MainActivity.isUser);
+                            ParseUser.getCurrentUser().saveInBackground();
 
                         }
                     }
                 });
 
-                Fragment fragment = new FirstResponderProfile();
 
-               // FragmentManager fm = getFragmentManager();
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.container, fragment);
-                transaction.commit();
-                button.setVisibility(View.INVISIBLE);
-                badgenumber.setVisibility(View.INVISIBLE);
             }
         });
 

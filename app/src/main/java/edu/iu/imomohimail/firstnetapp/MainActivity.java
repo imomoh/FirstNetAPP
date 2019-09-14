@@ -18,7 +18,7 @@ import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity {
-    public static boolean isUser= false;
+    public static boolean isUser= true;
     ConstraintLayout  mainvIEW;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 if(b){
                         mainvIEW.setBackgroundColor(getResources().getColor(R.color.red));
                     UserType.setText("First Responder");
+                    isUser=false;
 
                 }else {
                     mainvIEW.setBackgroundColor(getResources().getColor(R.color.blue));
 
                     UserType.setText("Citizen");
+                    isUser=true;
                 }
             }
         });
