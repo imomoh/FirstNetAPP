@@ -38,6 +38,7 @@ public class UserDataInput extends AppCompatActivity {
                 EditText allergiesInfo = findViewById(R.id.allergiesInput);
                 EditText medicationsInfo = findViewById(R.id.medicationInput);
                 EditText medicalConditionsInfo = findViewById(R.id.conditionsInput);
+                EditText preferredHospitalInfo = findViewById(R.id.hospitalInput);
                 EditText emergencyContactInfo = findViewById(R.id.emergencyContactInput);
 
                 user = new userInformation();
@@ -54,6 +55,7 @@ public class UserDataInput extends AppCompatActivity {
                 user.setAllergies(String.valueOf(allergiesInfo.getText()));
                 user.setMedications(String.valueOf(medicationsInfo.getText()));
                 user.setMedidcal_conditions(String.valueOf(medicalConditionsInfo.getText()));
+                user.setPreferred_hospital(preferredHospitalInfo.getText());
                 user.setEmergency_contact_phone_number(String.valueOf(emergencyContactInfo.getText()));
 
                 if (myDao != null){
@@ -76,6 +78,7 @@ public class UserDataInput extends AppCompatActivity {
                 ageInfo.setText("");
                 allergiesInfo.setText("");
                 medicationsInfo.setText("");
+                preferredHospitalInfo.setText("");
                 medicalConditionsInfo.setText("");
                 emergencyContactInfo.setText("");
 

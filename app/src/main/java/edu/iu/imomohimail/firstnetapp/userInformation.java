@@ -1,6 +1,9 @@
 package edu.iu.imomohimail.firstnetapp;
 
 
+import android.text.Editable;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -8,7 +11,11 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "users")
 public class userInformation {
 
+    /**
+     *
+     */
     @PrimaryKey
+    @NonNull
     private String user_driver_license_number;
 
     @ColumnInfo(name = "user_age")
@@ -95,5 +102,8 @@ public class userInformation {
 
     public void setEmergency_contact_phone_number(String emergency_contact_phone_number) {
         this.emergency_contact_phone_number = emergency_contact_phone_number;
+    }
+
+    public void setPreferred_hospital(Editable text) {
     }
 }
