@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirstResponderInput"
     android:background="@color/red"
-    android:id="@+id/container">
+    tools:context=".FirstResponderInput">
+
     <androidx.constraintlayout.widget.ConstraintLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/red">
+        android:background="#1C91E3">
 
         <TextView
             android:id="@+id/serviceprovider"
@@ -22,11 +22,12 @@
             android:layout_marginTop="72dp"
             android:layout_marginEnd="8dp"
             android:text="TextView"
-            android:textSize="36sp"
+            android:textAllCaps="true"
+            android:textSize="50sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView3"
@@ -41,7 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/serviceprovider"/>
+            app:layout_constraintTop_toBottomOf="@+id/serviceprovider" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="281dp"
@@ -63,7 +64,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Name"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black" />
         </androidx.cardview.widget.CardView>
 
         <Button
@@ -73,10 +74,11 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/custom_btn"
             android:text="Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
