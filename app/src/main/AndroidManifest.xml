@@ -3,6 +3,7 @@
           package="edu.iu.imomohimail.firstnetapp">
 
     <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".StarterApplication"
