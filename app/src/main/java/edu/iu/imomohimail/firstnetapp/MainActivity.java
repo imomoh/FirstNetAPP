@@ -17,10 +17,12 @@ import com.parse.ParseUser;
 public class MainActivity extends AppCompatActivity {
     public static boolean isUser= true;
     ConstraintLayout  mainvIEW;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
 
         if (ParseUser.getCurrentUser()!=null){
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView UserType = (TextView) findViewById(R.id.usertypetextview);
         UserType.setText("Citizen");
         // Save the current Installation to Back4App
-        ParseInstallation.getCurrentInstallation().saveInBackground();
+
         Boolean switchState = simpleSwitch.isChecked();
         simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
