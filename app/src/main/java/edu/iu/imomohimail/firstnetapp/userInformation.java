@@ -9,6 +9,7 @@ import androidx.room.PrimaryKey;
 public class userInformation {
 
     @PrimaryKey
+    @NonNull
     private String user_driver_license_number;
 
     @ColumnInfo(name = "user_age")
